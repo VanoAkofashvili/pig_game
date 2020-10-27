@@ -160,6 +160,74 @@ main {
   color: #9ba4b4;
 }
 
-.hidden {
-  display: none;
+.btn--rules {
+  left: auto;
+  right: 0;
+  top: 0;
+  transform: translate(-20px, 20px);
+}
+
+.btn--rules:active {
+  transform: translate(-20px, 23px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, .15);
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 105rem;
+  height: 65rem;
+
+  background-color: rgba(255, 255, 255, 0.8);
+  font-family: inherit;
+  font-size: 2.1rem;
+  line-height: 2.9rem;
+  border-radius: 9px;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s linear;
+}
+
+.rules {
+  width: 80%;
+  margin: auto;
+}
+
+.rules ul {
+  margin-left: 4rem;
+  margin-bottom: 1rem;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.btn--close {
+  position: absolute;
+  transform: none;
+  top: 2rem;
+  right: 2rem;
+  left: auto;
+}
+
+.btn--close:active {
+  transform: translateY(3px);
+}
+
+.hidden-popup {
+  transform: translate(-50%, -200%);
 }
