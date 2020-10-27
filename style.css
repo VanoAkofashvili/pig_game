@@ -22,6 +22,18 @@ body {
   justify-content: center;
 }
 
+
+
+::-moz-selection {
+  color: #333;
+  background: rgba(255,130,27, .5);
+}
+
+::selection {
+  color: #333;
+  background: rgba(255,130,27, .5);
+}
+
 /* LAYOUT */
 main {
   position: relative;
