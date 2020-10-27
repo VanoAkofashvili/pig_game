@@ -50,6 +50,13 @@ const init = function () {
 
   player1El.classList.remove('player--active');
   player0El.classList.add('player--active');
+
+  document.getElementById('name--0').textContent = player1
+    ? player1
+    : 'Player 1';
+  document.getElementById('name--1').textContent = player2
+    ? player2
+    : 'Player 2';
 };
 
 // Modal
