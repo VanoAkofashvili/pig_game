@@ -83,9 +83,13 @@ btnInput.addEventListener('click', function () {
   player1 = document.getElementById('plr1').value;
   player2 = document.getElementById('plr2').value;
 
-  if (player1 && player2 && player1.length < 15 && player2.length <= 15) {
-    document.getElementById('name--0').textContent = player1;
-    document.getElementById('name--1').textContent = player2;
+  if (player1.length < 15 && player2.length <= 15) {
+    document.getElementById('name--0').textContent = player1
+      ? player1
+      : 'Player 1';
+    document.getElementById('name--1').textContent = player2
+      ? player2
+      : 'Player 2';
     state.firstLoad = false;
     closeModal();
     document.getElementById('name_inputs').classList.add('hidden-popup');
