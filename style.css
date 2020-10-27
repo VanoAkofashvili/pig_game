@@ -227,7 +227,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(3px);
   z-index: 5;
 }
@@ -246,4 +246,34 @@ main {
 
 .hidden-popup {
   transform: translate(-50%, -200%);
+}
+
+/* Player Names */
+.player_names {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  transform: translateY(-50%);
+}
+
+.input_player-name {
+  padding: 1.3rem 2.2rem;
+  width: 40rem;
+  text-transform: uppercase;
+
+  background-color: #fff;
+  font-family: inherit;
+  box-shadow: 0 .6rem 1rem 0 rgba(0, 0, 0, .1);
+  border: none;
+  outline: none;
+  border-radius: 9px;
+}
+
+.btn--input {
+  transform: translate(-50%, 10rem);
+  padding: 1.5rem 2.5rem;
+}
+
+.btn--input:active {
+  transform: translate(-50%, 10.3rem);
 }
