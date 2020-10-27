@@ -8,10 +8,15 @@ const score1El = document.getElementById('score--1');
 const current0El = document.getElementById('current--0');
 const current1El = document.getElementById('current--1');
 
+const modalEl = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+
 const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const btnRules = document.querySelector('.btn--rules');
+const btnClose = document.querySelector('.btn--close');
 
 score0El.textContent = 0;
 score1El.textContent = 0;
@@ -25,6 +30,7 @@ const init = function () {
     activePlayer: 0,
     playing: true,
     scores: [0, 0],
+    modalOpened: false,
   };
 
   score0El.textContent = 0;
@@ -94,3 +100,24 @@ btnHold.addEventListener('click', function () {
 });
 
 btnNew.addEventListener('click', init);
+
+// Modal
+const openModal = function () {
+  modalEl.classList.remove('hidden-popup');
+  overlay.classList.remove('hidden-popup');
+};
+
+const closeModal = function () {
+  modalEl.classList.add('hidden-popup');
+  overlay.classList.add('hidden-popup');
+};
+
+btnRules.addEventListener('click', function () {
+  if (!state.modal) {
+    openModal();
+  }
+});
+
+overlay.addEventListener('click', closeModal);
+
+btnClose.addEventListener('click', closeModal);
