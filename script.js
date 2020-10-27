@@ -56,6 +56,7 @@ const init = function () {
 const openModal = function () {
   modalEl.classList.remove('hidden-popup');
   overlay.classList.remove('hidden-popup');
+  state.modalOpened = true;
 };
 
 const closeModal = function () {
@@ -63,6 +64,7 @@ const closeModal = function () {
   if (!state.firstLoad) {
     overlay.classList.add('hidden-popup');
   }
+  state.modalOpened = false;
 };
 
 btnRules.addEventListener('click', function () {
@@ -71,15 +73,11 @@ btnRules.addEventListener('click', function () {
   }
 });
 
-const inputNames = function () {
-  document.getElementById('name_inputs').classList.remove('hidden-popup');
-  overlay.classList.remove('hidden-popup');
-};
-
-inputNames();
+document.getElementById('name_inputs').classList.remove('hidden-popup');
+overlay.classList.remove('hidden-popup');
 init();
 
-btnInput.addEventListener('click', function () {
+const inputNames = function () {
   player1 = document.getElementById('plr1').value;
   player2 = document.getElementById('plr2').value;
 
@@ -93,6 +91,18 @@ btnInput.addEventListener('click', function () {
     state.firstLoad = false;
     closeModal();
     document.getElementById('name_inputs').classList.add('hidden-popup');
+  }
+};
+
+btnInput.addEventListener('click', inputNames);
+document.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter' && state.firstLoad) {
+    inputNames();
+  }
+});
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && state.modalOpened) {
+    closeModal();
   }
 });
 
