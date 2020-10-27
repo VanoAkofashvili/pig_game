@@ -160,6 +160,10 @@ main {
   color: #9ba4b4;
 }
 
+.hidden {
+  display: none;
+}
+
 .btn--rules {
   left: auto;
   right: 0;
@@ -230,8 +234,4 @@ main {
 
 .hidden-popup {
   transform: translate(-50%, -200%);
-}
-
-.hidden {
-  display: none;
 }
